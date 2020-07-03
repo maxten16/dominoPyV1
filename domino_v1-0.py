@@ -1,7 +1,7 @@
 #! python3
 
-#programa para simular juego de dominó
-#Importando librerias
+#programa para simular juego de dominó-------------------------------------------------------------
+#Importando librerias------------------------------------------------------------------------------
 import random
 
 #Declarando todas las fichas disponibles (28 piezas):
@@ -36,8 +36,8 @@ f28= [6,6]
 nombresFichas = [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,
                 f15,f16,f17,f18,f19,f20,f21,f22,f23,f24,f25,f26,f27,f28]
 
-#Declarando la lista principal sobre la que se desarrolla el juego 
-# y las listas con las fichas de los jugadores.
+#Declarando la lista principal sobre la que se desarrolla el juego --------------------------------
+# y las listas con las fichas de los jugadores.----------------------------------------------------
 juego = []
 fichasJugador = []
 fichasPython = []
@@ -76,8 +76,8 @@ print("Mis fichas son: " + str(fichasPython))
 #Climax del juego
 print("\nColocando la primer ficha, después mueves tu :)")
 
-#Algoritmo para identificar y colocar la primer ficha doble
-#para comenzar la partida.
+#Algoritmo para identificar y colocar la primer ficha doble----------------------------------------
+#para comenzar la partida.-------------------------------------------------------------------------
 n=6
 prueba = False
 while prueba == False and n >= 0:
@@ -104,3 +104,13 @@ while prueba == False and n >= 0:
             pass
     n -= 1
 print("Primera movida "+ str(juego))
+
+#Comienza a mover fichas jugador e IA--------------------------------------------------------------
+turnoJugador = False
+turnoIA = False
+if len(fichasPython) < len(fichasJugador):
+    turnoJugador = True
+else:
+    turnoIA = True
+
+
