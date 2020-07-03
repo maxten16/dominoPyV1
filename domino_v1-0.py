@@ -5,34 +5,11 @@
 import random
 
 #Declarando todas las fichas disponibles (28 piezas):
-f1= [0,0]
-f2= [0,1]
-f3= [0,2]
-f4= [0,3]
-f5= [0,4]
-f6= [0,5]
-f7= [0,6]
-f8= [1,1]
-f9= [1,2]
-f10= [1,3]
-f11= [1,4]
-f12= [1,5]
-f13= [1,6]
-f14= [2,2]
-f15= [2,3]
-f16= [2,4]
-f17= [2,5]
-f18= [2,6]
-f19= [3,3]
-f20= [3,4]
-f21= [3,5]
-f22= [3,6]
-f23= [4,4]
-f24= [4,5]
-f25= [4,6]
-f26= [5,5]
-f27= [5,6]
-f28= [6,6]
+f1, f2, f3, f4, f5, f6, f7, f8, f9  = [0,0], [0,1], [0,2], [0,3], [0,4], [0,5], [0,6], [1,1], [1,2]
+f10, f11, f12, f13, f14, f15, f16, f17 = [1,3], [1,4], [1,5], [1,6], [2,2], [2,3], [2,4], [2,5]
+f18, f19, f20, f21, f22, f23, f24, f25 = [2,6], [3,3], [3,4], [3,5], [3,6], [4,4], [4,5], [4,6]
+f26, f27, f28 = [5,5], [5,6], [6,6]
+
 nombresFichas = [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,
                 f15,f16,f17,f18,f19,f20,f21,f22,f23,f24,f25,f26,f27,f28]
 
@@ -105,12 +82,26 @@ while prueba == False and n >= 0:
     n -= 1
 print("Primera movida "+ str(juego))
 
-#Comienza a mover fichas jugador e IA--------------------------------------------------------------
+# Se define primer turno jugador o IA--------------------------------------------------------------
 turnoJugador = False
 turnoIA = False
+finJuego = False
+
+# Con base en quien puso primero se determina quien es el siguiente en mover-----------------------
 if len(fichasPython) < len(fichasJugador):
     turnoJugador = True
 else:
     turnoIA = True
 
-
+# Comienzan a mover los jugadores------------------------------------------------------------------
+# El numero de ficha se selecciona de izquierda a derecha empezando desde el 0
+while finJuego == False:
+    if turnoJugador == True:
+        fichaEscogidaJug = int(input("Numero de ficha: "))
+        if fichaEscogidaJug >= 0 and fichaEscogidaJug < len(fichasJugador):
+            pass 
+        else:
+            print("Error, número inválido de ficha")
+            continue
+    else:
+        pass
